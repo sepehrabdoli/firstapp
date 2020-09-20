@@ -15,7 +15,20 @@ public class FirstFragment extends Fragment {
 
     TextView showCountTextView;
 
+
     @Override
+    public View onCreateView(
+            LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState
+    ) {
+        // Inflate the layout for this fragment
+        View fragmentFirstLayout = inflater.inflate(R.layout.fragment_first, container, false);
+        // Get the count text view
+        showCountTextView = fragmentFirstLayout.findViewById(R.id.textview_first);
+
+        return fragmentFirstLayout;
+    }
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -43,8 +56,4 @@ public class FirstFragment extends Fragment {
             }
         });
     }
-
-
-
-
 }
